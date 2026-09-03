@@ -15,16 +15,16 @@ Compression, OCR, document editing, cloud file storage, and paid plans are outsi
 
 ## Components
 
-| Layer | Responsibility |
-| --- | --- |
-| React + TypeScript | Responsive workspace, page controls, accessible account forms |
-| Vinext / Vite | Routing, local development, production bundle |
-| pdf-lib | Read documents, copy pages, apply rotations, and serialize exports |
-| PDF.js | Render actual page thumbnails locally |
-| Web Worker | Run PDF export work away from the interface thread |
-| Supabase Auth | Email/password identity, sessions, confirmation, and recovery |
-| Hugeicons | Consistent outlined interface icons |
-| Sites | Web hosting; source also lives in the public furyengi/folio repository |
+| Layer              | Responsibility                                                         |
+| ------------------ | ---------------------------------------------------------------------- |
+| React + TypeScript | Responsive workspace, page controls, accessible account forms          |
+| Vinext / Vite      | Routing, local development, production bundle                          |
+| pdf-lib            | Read documents, copy pages, apply rotations, and serialize exports     |
+| PDF.js             | Render actual page thumbnails locally                                  |
+| Web Worker         | Run PDF export work away from the interface thread                     |
+| Supabase Auth      | Email/password identity, sessions, confirmation, and recovery          |
+| Hugeicons          | Consistent outlined interface icons                                    |
+| Sites              | Web hosting; source also lives in the public furyengi/folio repository |
 
 ## Document flow
 
@@ -76,4 +76,4 @@ Test merge order, selected-page export, rotation, and invalid input using genera
 
 ## Pending infrastructure choice
 
-GitHub access as furyengi is available. Supabase access is available, but the existing projects belong to other products. A dedicated project should be selected or created with the user's organization and cost confirmation before connecting production authentication.
+GitHub access as furyengi is available. Supabase access is available, but the existing projects belong to other products. The user selected evnar and project creation was quoted at $0/month, but Supabase refused creation because the account has reached its free-project limit. Authentication is implemented but awaits an available project or an explicit choice to reuse an existing project.
