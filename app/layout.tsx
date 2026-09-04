@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import './globals.css';
 export const metadata: Metadata = {
-  title: 'Folio — The PDF workspace',
+  title: 'Folio — Write, edit, and work with PDFs',
   description:
-    'Merge, split, rotate, and arrange PDFs privately in your browser. Free and open source.',
+    'A free, open-source document editor with local autosave and PDF tools. Write, format, and export on your device.',
 };
 export default function RootLayout({
   children,

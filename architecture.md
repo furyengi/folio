@@ -36,14 +36,14 @@ Page / word count         Editing mode             Zoom
 
 Document tabs support switching between open files; ribbon tabs select command groups. They are different controls with distinct keyboard behavior. The right properties panel appears only when relevant. A PDF stays inside the same workspace, with PDF-specific commands and a visible Convert to editable document action.
 
-| Ribbon | Commands |
-| --- | --- |
-| Home | Undo/redo, clipboard, styles, font, emphasis, alignment, lists, spacing, find/replace |
-| Insert | Tables, images, links, breaks, headers, footers, page numbers |
-| Layout | Paper size, orientation, margins, indentation, page and section layout |
-| Review | Comments, spelling assistance, word count; tracked changes in a later release |
-| PDF Tools | Organize, convert, annotate, forms, optimize, protect, and compare |
-| Export | Editable file, PDF, images, plain text, Markdown, and print as supported |
+| Ribbon    | Commands                                                                              |
+| --------- | ------------------------------------------------------------------------------------- |
+| Home      | Undo/redo, clipboard, styles, font, emphasis, alignment, lists, spacing, find/replace |
+| Insert    | Tables, images, links, breaks, headers, footers, page numbers                         |
+| Layout    | Paper size, orientation, margins, indentation, page and section layout                |
+| Review    | Comments, spelling assistance, word count; tracked changes in a later release         |
+| PDF Tools | Organize, convert, annotate, forms, optimize, protect, and compare                    |
+| Export    | Editable file, PDF, images, plain text, Markdown, and print as supported              |
 
 On small screens, the ribbon condenses into labeled command groups and side panels become drawers. Keyboard focus, selection preservation when clicking ribbon controls, shortcuts, screen-reader labels, and reduced-motion support are acceptance requirements. There must be no decorative or nonfunctional toolbar commands in released builds.
 
@@ -67,18 +67,18 @@ Native documents export through the editable model. Exporting a PDF does not rep
 
 ## Module boundaries and technology decisions
 
-| Module | Responsibility and decision |
-| --- | --- |
-| Workspace shell | Existing React/TypeScript and Vinext/Vite; shared commands, menus, panels, and document tabs |
-| Editor adapter | Encapsulate the structured editing engine, schema, selection, and transactions; choose an open-source engine through the Release 1 spike |
-| Layout engine | Page flow, breaks, measurements, headers/footers, and print layout, independently tested |
-| PDF viewer | Existing PDF.js integration, local rendering, search, thumbnails, and zoom |
-| PDF operations | Existing pdf-lib adapter for supported mutations; separate engines for capabilities it cannot provide |
-| Export adapters | Convert the canonical document model to supported formats without coupling the editor to a converter |
-| Local persistence | IndexedDB snapshots and assets, schema migration, recovery, and explicit deletion |
-| Cloud persistence | Optional Supabase Auth, Postgres metadata, and private object storage |
-| Job API and workers | Isolated conversion, OCR, repair, encryption, and other expensive operations |
-| UI system | Existing accessible primitives styled in monochrome; Hugeicons for product controls |
+| Module              | Responsibility and decision                                                                                                              |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Workspace shell     | Existing React/TypeScript and Vinext/Vite; shared commands, menus, panels, and document tabs                                             |
+| Editor adapter      | Encapsulate the structured editing engine, schema, selection, and transactions; choose an open-source engine through the Release 1 spike |
+| Layout engine       | Page flow, breaks, measurements, headers/footers, and print layout, independently tested                                                 |
+| PDF viewer          | Existing PDF.js integration, local rendering, search, thumbnails, and zoom                                                               |
+| PDF operations      | Existing pdf-lib adapter for supported mutations; separate engines for capabilities it cannot provide                                    |
+| Export adapters     | Convert the canonical document model to supported formats without coupling the editor to a converter                                     |
+| Local persistence   | IndexedDB snapshots and assets, schema migration, recovery, and explicit deletion                                                        |
+| Cloud persistence   | Optional Supabase Auth, Postgres metadata, and private object storage                                                                    |
+| Job API and workers | Isolated conversion, OCR, repair, encryption, and other expensive operations                                                             |
+| UI system           | Existing accessible primitives styled in monochrome; Hugeicons for product controls                                                      |
 
 Engine selection is an implementation gate, not a settled dependency claim. Evaluate an open-source structured editor such as ProseMirror/Tiptap or Lexical against pagination, tables, IME, accessibility, and export requirements. Paid editor extensions must not be an undisclosed dependency. Verify current APIs and licenses before choosing packages.
 
@@ -160,18 +160,18 @@ Real-time collaboration, desktop distribution, dedicated mobile apps, AI summari
 
 Reference inventory checked on 4 September 2026: [iLovePDF tools](https://www.ilovepdf.com/). This inventory is a planning reference, not an implementation or parity claim. The surrounding editor, storage, and release decisions are Folio's own design.
 
-| Reference capability | Folio target |
-| --- | --- |
-| Merge, split, extract, remove, organize, rotate | Existing foundation; integrated in Release 1 |
-| Edit, watermark, number, crop, fill forms, visual signing | Release 2 |
-| PDF/image conversion | Release 2 |
-| Compression, repair, OCR, scanning | Release 3 |
-| Word, PowerPoint, Excel, HTML to PDF | Release 3; basic DOCX exchange begins in Release 2 |
-| PDF to Word, PowerPoint, Excel, Markdown | Release 3, gated by conversion quality |
-| Unlock and protect | Release 3 |
-| PDF/A, redact, compare, create forms | Release 4 |
-| Signature requests and reusable workflows | Release 4, following service design |
-| Summarization and translation | Later extensions; provider, cost, and privacy decisions pending |
+| Reference capability                                      | Folio target                                                    |
+| --------------------------------------------------------- | --------------------------------------------------------------- |
+| Merge, split, extract, remove, organize, rotate           | Existing foundation; integrated in Release 1                    |
+| Edit, watermark, number, crop, fill forms, visual signing | Release 2                                                       |
+| PDF/image conversion                                      | Release 2                                                       |
+| Compression, repair, OCR, scanning                        | Release 3                                                       |
+| Word, PowerPoint, Excel, HTML to PDF                      | Release 3; basic DOCX exchange begins in Release 2              |
+| PDF to Word, PowerPoint, Excel, Markdown                  | Release 3, gated by conversion quality                          |
+| Unlock and protect                                        | Release 3                                                       |
+| PDF/A, redact, compare, create forms                      | Release 4                                                       |
+| Signature requests and reusable workflows                 | Release 4, following service design                             |
+| Summarization and translation                             | Later extensions; provider, cost, and privacy decisions pending |
 
 ## Target repository structure
 
@@ -203,3 +203,9 @@ Require ownership tests before cloud persistence, sandbox/cleanup tests before c
 Supabase project creation in the selected evnar organization was quoted at $0/month but refused because the account reached its free-project limit. Existing projects must not be reused or paused without the user's explicit choice. Hosted preview upload failed, and the Sites connector was subsequently unavailable in the session; the public GitHub source is intact.
 
 The next implementation milestone is Release 1's editor-engine and pagination spike, followed by the working document shell. It does not require resolving Supabase or purchasing services. This architecture revision changes documentation only; implementation should follow as a separate step from the user's clarification request.
+
+## Implementation checkpoint — 4 September 2026
+
+The editor foundation now exists: open document tabs, editable titles, Tiptap rich text and tables, images, links, outline, find/replace, local IndexedDB autosave, native JSON/text import/export, paper settings, and print-to-PDF. The original PDF utilities are integrated in a separate workspace mode. Tests exercise native round trips, schema rejection, safe imports, text transactions, and existing PDF transforms.
+
+Release 1 remains incomplete: the current canvas is continuous, with explicit breaks and automatic pagination at print time. On-screen pagination, browser interaction acceptance, and multi-page table/layout fidelity still require work. Cloud authentication/storage, DOCX, and advanced PDF conversions are not implemented by this checkpoint. The current UI and README describe these boundaries; no feature parity claim is made.

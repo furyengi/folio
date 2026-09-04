@@ -580,3 +580,720 @@ nav a {
     margin-bottom: 28px;
   }
 }
+/* Document workspace */
+[hidden] {
+  display: none !important;
+}
+.editor-app {
+  min-height: 100vh;
+  background: #f2f2f2;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.editor-header {
+  height: 78px;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  background: #fff;
+  border-bottom: 1px solid #e2e2e2;
+}
+.editor-brand {
+  font:
+    bold 37px Georgia,
+    serif;
+  letter-spacing: -2px;
+  color: #111;
+}
+.editor-brand span {
+  padding-left: 11px;
+  color: #999;
+  font: 25px Arial;
+}
+.document-identity {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.document-identity input {
+  font: 500 15px Arial;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  background: transparent;
+  width: 300px;
+  max-width: 100%;
+  padding: 3px 5px;
+  margin-left: -5px;
+}
+.document-identity input:hover {
+  border-color: #ddd;
+}
+.document-identity output {
+  font-size: 12px;
+  color: #737373;
+}
+.editor-header-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.editor-header-actions > a {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.editor-header .button {
+  min-height: 36px;
+  padding: 9px 18px;
+  font-size: 13px;
+}
+.workspace-navigation {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 0 24px;
+  height: 47px;
+  background: #fafafa;
+  border-bottom: 1px solid #ddd;
+}
+.mode-switch {
+  height: 30px !important;
+  padding: 2px !important;
+  background: #eaeaea !important;
+  border-radius: 4px !important;
+  gap: 2px !important;
+}
+.mode-switch button {
+  font-size: 12px !important;
+  padding: 5px 13px !important;
+  border-radius: 3px !important;
+}
+.mode-switch button[data-active] {
+  background: #111 !important;
+  color: #fff !important;
+}
+.document-tabs {
+  display: flex;
+  align-items: stretch;
+  gap: 3px;
+  height: 100%;
+  min-width: 0;
+  overflow: auto;
+}
+.document-tab {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid transparent;
+  flex-shrink: 0;
+}
+.document-tab.selected {
+  background: #fff;
+  border-bottom-color: #111;
+}
+.document-tab button {
+  border: 0;
+  background: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  color: #555;
+  font-size: 12px;
+}
+.document-tab button:first-child {
+  max-width: 205px;
+}
+.document-tab span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.new-document {
+  display: grid;
+  place-items: center;
+  min-width: 38px;
+  border: 0;
+  background: none;
+}
+.ribbon {
+  background: #fff;
+  gap: 0 !important;
+  border-bottom: 1px solid #d5d5d5;
+}
+.ribbon-tabs {
+  padding: 0 22px !important;
+  gap: 9px !important;
+  height: 39px !important;
+  border-radius: 0 !important;
+  background: white !important;
+}
+.ribbon-tabs button {
+  flex: none !important;
+  padding: 0 12px !important;
+  font-size: 13px !important;
+  height: 37px !important;
+}
+.ribbon-tabs button:after {
+  bottom: 0 !important;
+}
+.ribbon-panel {
+  padding: 11px 24px !important;
+  min-height: 99px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  overflow-x: auto;
+}
+.ribbon-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-right: 18px;
+  border-right: 1px solid #e3e3e3;
+  flex-shrink: 0;
+  min-height: 60px;
+}
+.editor-command {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  background: transparent;
+  border-radius: 3px;
+  padding: 9px;
+  min-width: 42px;
+  min-height: 54px;
+  font-size: 16px;
+  color: #333;
+}
+.editor-command > span {
+  font-size: 12px;
+  white-space: nowrap;
+}
+.editor-command:hover:not(:disabled),
+.editor-command.is-active {
+  background: #ededed;
+  border-color: #ddd;
+}
+.formatting-group {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+.choice-row,
+.format-row {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.format-row .editor-command {
+  min-height: 30px;
+  height: 30px;
+  padding: 5px;
+  min-width: 30px;
+}
+.format-row .editor-command > span {
+  display: none;
+}
+.editor-choice {
+  border-radius: 3px !important;
+  font-size: 12px !important;
+  height: 28px !important;
+  min-width: 68px;
+  background: white !important;
+}
+.choice-row .editor-choice:first-child {
+  min-width: 116px;
+}
+.choice-row .editor-choice:nth-child(2) {
+  min-width: 110px;
+}
+.ribbon-help {
+  font-size: 12px;
+  color: #777;
+  line-height: 1.7;
+  margin: 0;
+  min-width: 170px;
+}
+.layout-choices {
+  gap: 22px;
+}
+.layout-choices label {
+  font-size: 12px;
+  display: grid;
+  gap: 8px;
+}
+.document-body {
+  display: flex;
+  min-height: calc(100vh - 302px);
+}
+.document-outline {
+  width: 218px;
+  min-width: 218px;
+  border-right: 1px solid #ddd;
+  padding: 29px 18px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #f8f8f8;
+}
+.outline-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.3px;
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+  margin-bottom: 24px;
+}
+.outline-title span {
+  color: #999;
+}
+.document-outline > p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #999;
+  padding: 0 8px;
+}
+.document-outline > button {
+  background: none;
+  border: 0;
+  text-align: left;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #555;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.document-outline > button:hover {
+  background: #eee;
+}
+.outline-bottom {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 60px;
+  color: #777;
+  font-size: 12px;
+}
+.outline-bottom small {
+  display: block;
+  font-size: 11px;
+  margin-top: 6px;
+  color: #999;
+}
+.document-stage {
+  flex: 1;
+  overflow: auto;
+  padding: 20px 40px 50px;
+  min-width: 0;
+}
+.document-ruler {
+  width: min(794px, 100%);
+  margin: 0 auto 14px;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+  color: #999;
+  font: 10px monospace;
+  background: repeating-linear-gradient(
+      to right,
+      transparent 0,
+      transparent calc(2.5% - 1px),
+      #d6d6d6 calc(2.5% - 1px),
+      #d6d6d6 2.5%
+    )
+    bottom/100% 5px no-repeat;
+}
+.paper {
+  background: white;
+  width: var(--paper-width);
+  min-height: var(--paper-height);
+  margin: auto;
+  box-shadow: 0 1px 5px #0000000d;
+  border: 1px solid #dedede;
+  padding: var(--page-margin);
+}
+.folio-document {
+  min-height: calc(var(--paper-height) - var(--page-margin)*2);
+  outline: 0 !important;
+  font-family: Arial, sans-serif;
+  font-size: 12pt;
+  line-height: 1.6;
+  color: #161616;
+  overflow-wrap: anywhere;
+}
+.folio-document > p:first-child:last-child:empty:before {
+  content: attr(data-placeholder);
+  content: 'Start writing…';
+  color: #aaa;
+  pointer-events: none;
+  float: left;
+  height: 0;
+}
+.folio-document p {
+  margin: 0 0 12px;
+}
+.folio-document h1,
+.folio-document h2,
+.folio-document h3 {
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: normal;
+  margin: 22px 0 12px;
+}
+.folio-document h1 {
+  font-size: 28pt;
+}
+.folio-document h2 {
+  font-size: 21pt;
+}
+.folio-document h3 {
+  font-size: 16pt;
+}
+.folio-document ul {
+  list-style: disc;
+  padding-left: 26px;
+}
+.folio-document ol {
+  list-style: decimal;
+  padding-left: 26px;
+}
+.folio-document blockquote {
+  border-left: 3px solid #ccc;
+  margin: 16px 0;
+  padding-left: 20px;
+}
+.folio-document pre {
+  background: #f5f5f5;
+  padding: 14px;
+  white-space: pre-wrap;
+}
+.folio-document a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.folio-document img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 14px 0;
+}
+.folio-document table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+  margin: 18px 0;
+}
+.folio-document th,
+.folio-document td {
+  border: 1px solid #aaa;
+  vertical-align: top;
+  padding: 8px;
+  min-width: 40px;
+  position: relative;
+}
+.folio-document th {
+  background: #f5f5f5;
+  font-weight: 600;
+}
+.folio-document .selectedCell:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #00000012;
+  pointer-events: none;
+}
+.folio-document .column-resize-handle {
+  position: absolute;
+  right: -2px;
+  top: 0;
+  bottom: -2px;
+  width: 4px;
+  background: #777;
+  pointer-events: none;
+}
+.folio-document .ProseMirror-selectednode {
+  outline: 2px solid #777;
+}
+.document-break {
+  border-top: 1px dashed #ccc;
+  margin: 35px 0;
+  position: relative;
+  height: 1px;
+}
+.document-break:after {
+  content: 'PAGE BREAK';
+  font: 10px Arial;
+  letter-spacing: 1px;
+  color: #999;
+  position: absolute;
+  right: 0;
+  top: -15px;
+}
+.canvas-note {
+  margin: 22px 0 0;
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 1.8px;
+  color: #999;
+}
+.editor-starting {
+  color: #999;
+}
+.editor-status {
+  min-height: 34px;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 22px;
+  font-size: 11px;
+  color: #777;
+}
+.editor-status output {
+  color: #333;
+  flex: 1;
+}
+.zoom-controls {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.zoom-controls button {
+  border: 0;
+  background: none;
+  padding: 8px;
+  font-size: 12px;
+}
+.editor-modal {
+  border-radius: 4px !important;
+  padding: 26px !important;
+}
+.editor-modal label {
+  display: grid;
+  gap: 7px;
+  font-size: 13px;
+}
+.editor-modal input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 100%;
+}
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.editor-modal output {
+  font-size: 13px;
+  color: #666;
+}
+.workspace-notice {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 10px 24px;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  font-size: 13px;
+}
+.workspace-notice button {
+  border: 0;
+  background: transparent;
+}
+.draft-loading {
+  padding: 80px;
+  text-align: center;
+  color: #777;
+}
+.pdf-pane .site-header,
+.pdf-pane footer,
+.pdf-pane .intro {
+  display: none;
+}
+.pdf-pane .workspace {
+  padding-top: 0;
+}
+.pdf-pane-intro {
+  max-width: 1240px;
+  padding: 30px 40px 10px;
+  margin: auto;
+}
+.pdf-pane-intro > span {
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+.pdf-pane-intro p {
+  color: #777;
+  font-size: 14px;
+  margin-top: 8px;
+}
+.pdf-pane {
+  background: #fff;
+  min-height: calc(100vh - 125px);
+}
+@media (max-width: 1000px) {
+  .document-outline {
+    display: none;
+  }
+  .document-stage {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .editor-header-actions > a {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .editor-header {
+    padding: 0 14px;
+    gap: 12px;
+    height: 70px;
+  }
+  .editor-brand {
+    font-size: 29px;
+  }
+  .editor-brand span {
+    display: none;
+  }
+  .document-identity input {
+    width: 170px;
+    font-size: 13px;
+  }
+  .document-identity output {
+    font-size: 10px;
+  }
+  .editor-header-actions {
+    gap: 0;
+  }
+  .editor-header .button {
+    padding: 8px;
+    font-size: 12px;
+  }
+  .workspace-navigation {
+    padding: 0 10px;
+    gap: 10px;
+  }
+  .ribbon-tabs {
+    padding: 0 8px !important;
+    gap: 0 !important;
+  }
+  .ribbon-tabs button {
+    padding: 0 10px !important;
+    font-size: 12px !important;
+  }
+  .ribbon-panel {
+    padding: 10px 12px !important;
+  }
+  .document-stage {
+    padding: 16px 12px;
+  }
+  .paper {
+    zoom: 0.6 !important;
+  }
+  .document-ruler {
+    display: none;
+  }
+  .editor-status {
+    gap: 10px;
+    padding: 0 10px;
+    flex-wrap: wrap;
+  }
+  .editor-status > span:nth-child(2) {
+    display: none;
+  }
+  .editor-status output {
+    min-width: 120px;
+  }
+  .document-tab button:first-child {
+    max-width: 150px;
+  }
+}
+@media print {
+  html,
+  body,
+  .editor-app {
+    background: #fff !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .editor-header,
+  .workspace-navigation,
+  .ribbon,
+  .document-outline,
+  .document-ruler,
+  .editor-status,
+  .canvas-note,
+  .workspace-notice,
+  .pdf-pane {
+    display: none !important;
+  }
+  .document-body,
+  .document-stage {
+    display: block !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    min-height: 0 !important;
+  }
+  .paper {
+    zoom: 1 !important;
+    width: auto !important;
+    min-height: 0 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .folio-document {
+    min-height: 0 !important;
+  }
+  .folio-document p {
+    orphans: 3;
+    widows: 3;
+  }
+  .folio-document h1,
+  .folio-document h2,
+  .folio-document h3 {
+    break-after: avoid;
+  }
+  .folio-document img,
+  .folio-document tr {
+    break-inside: avoid;
+  }
+  .folio-document thead {
+    display: table-header-group;
+  }
+  .document-break {
+    break-before: page;
+    border: 0;
+    margin: 0;
+    height: 0;
+  }
+  .document-break:after,
+  .folio-document > p:empty:before {
+    display: none !important;
+  }
+  [data-slot='dialog-overlay'],
+  [data-slot='dialog-content'] {
+    display: none !important;
+  }
+}
+
+.layout-label {
+  font-size: 12px;
+  display: grid;
+  gap: 8px;
+}
